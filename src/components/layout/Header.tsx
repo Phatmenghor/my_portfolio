@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
@@ -10,7 +11,6 @@ import { LuSun } from "react-icons/lu";
 
 const Header = () => {
   const pathname = usePathname();
-  const [clicked, setClicked] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const [mobile, setMobile] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -74,7 +74,7 @@ const Header = () => {
               <Link
                 href={"/service"}
                 onClick={() => handleLinkClick("/service")}
-                className={activeLink == "/services" ? "active" : ""}
+                className={activeLink == "/service" ? "active" : ""}
               >
                 Services
               </Link>
@@ -88,13 +88,22 @@ const Header = () => {
                 projects
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href={"/blog"}
                 onClick={() => handleLinkClick("/blog")}
                 className={activeLink == "/blog" ? "active" : ""}
               >
                 Blogs
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                href={"/gallery"}
+                onClick={() => handleLinkClick("/gallery")}
+                className={activeLink == "/gallery" ? "active" : ""}
+              >
+                Gallery
               </Link>
             </li>
             <li>
@@ -153,7 +162,7 @@ const Header = () => {
               <Link
                 href={"/service"}
                 onClick={() => handleLinkClick("/service")}
-                className={activeLink == "/services" ? "active" : ""}
+                className={activeLink == "/service" ? "active" : ""}
               >
                 Services
               </Link>
@@ -167,13 +176,22 @@ const Header = () => {
                 projects
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href={"/blog"}
                 onClick={() => handleLinkClick("/blog")}
                 className={activeLink == "/blog" ? "active" : ""}
               >
                 Blogs
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                href={"/gallery"}
+                onClick={() => handleLinkClick("/gallery")}
+                className={activeLink == "/gallery" ? "active" : ""}
+              >
+                Gallery
               </Link>
             </li>
             <li>

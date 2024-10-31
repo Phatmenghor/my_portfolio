@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { projectBlogs, projectsRecent } from "@/constants/data";
@@ -6,7 +7,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { BiDownload } from "react-icons/bi";
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import { FaCalendarDays } from "react-icons/fa6";
 import { GoArrowUpRight } from "react-icons/go";
 import { GrLinkedinOption } from "react-icons/gr";
 import { LiaBasketballBallSolid } from "react-icons/lia";
@@ -255,9 +255,9 @@ const Home = () => {
               <h1>No Project Found</h1>
             ) : (
               filteredProjects.slice(0, 4).map((project, index) => (
-                <Link href={"/"} className="procard">
+                <Link key={index} href={"/"} className="procard">
                   <div className="proimgbox">
-                    <img src={project.image} />
+                    <img src={project.image} alt="" />
                   </div>
 
                   <div className="procontentbox">
